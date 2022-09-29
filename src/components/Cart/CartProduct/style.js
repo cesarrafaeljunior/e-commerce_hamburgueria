@@ -5,8 +5,7 @@ export const StyledProductsCart = styled.li`
   align-items: center;
   gap: 15px;
 
-  width: 90%;
-  height: 100%;
+  width: 100%;
 
   margin: 0 auto;
   figure {
@@ -14,10 +13,10 @@ export const StyledProductsCart = styled.li`
     align-items: center;
     width: 70px;
     height: 100%;
+    background-color: var(--gray0);
   }
 
   img {
-    background-color: var(--gray20);
     width: 100%;
     height: 70px;
   }

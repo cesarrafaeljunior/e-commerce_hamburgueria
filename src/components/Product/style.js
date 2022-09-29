@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledProducts = styled.li`
-  min-width: 300px;
+  min-width: 15rem;
 
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@ export const StyledProducts = styled.li`
     width: 100%;
     height: 150px;
 
-    background-color: var(--gray20);
+    background-color: var(--gray0);
   }
 
   img {
@@ -59,5 +59,18 @@ export const StyledProducts = styled.li`
     font-weight: var(--fontWeiSemiBold);
 
     margin: 20px 0 0 20px;
+  }
+
+  @media (min-width: 768px) {
+    min-width: 12rem;
+  }
+  @media (min-width: 850px) {
+    min-width: 15rem;
+  }
+  @media (min-width: 1000px) {
+    min-width: 10rem;
+  }
+  @media (min-width: 1190px) {
+    min-width: 15rem;
   }
 `;

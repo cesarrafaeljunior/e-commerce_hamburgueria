@@ -5,9 +5,18 @@ export const StyledList = styled.ul`
   align-items: center;
   gap: 20px;
 
-  width: 100%;
+  margin: 0 -15px 0 -15px;
 
-  margin-left: 15px;
+  padding-left: 1rem;
 
   overflow: auto;
+
+  @media (min-width: 768px) {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (min-width: 1000px) {
+    justify-content: flex-start;
+  }
 `;

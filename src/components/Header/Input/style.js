@@ -31,4 +31,8 @@ export const ContainerInput = styled.div`
     top: 0.5rem;
     right: 0.8rem;
   }
+
+  @media (min-width: 768px) {
+    max-width: 365px;
+  }
 `;

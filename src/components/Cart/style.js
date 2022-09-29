@@ -4,6 +4,7 @@ export const StyledCart = styled.div`
   width: 100%;
   max-width: 365px;
   height: 100%;
+  max-height: 400px;
 
   border: solid 1px var(--gray20);
   border-radius: 5px 5px 0 0;
@@ -35,5 +36,8 @@ export const StyledCart = styled.div`
   ul {
     background-color: var(--white);
     margin: 20px 0 0 0;
+    flex-wrap: wrap;
+    height: 300px;
+    overflow-y: auto;
   }
 `;
