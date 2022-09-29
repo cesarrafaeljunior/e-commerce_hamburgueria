@@ -10,6 +10,13 @@ export const Cart = () => {
       </div>
       <List>
         <ProductsCart />
+        <ProductsCart />
+        <ProductsCart />
+        <ProductsCart />
+        <ProductsCart />
+        <ProductsCart />
+        <ProductsCart />
+        <ProductsCart />
       </List>
     </StyledCart>
   );

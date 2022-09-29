@@ -26,9 +26,6 @@ function App() {
             <Products />
             <Products />
             <Products />
-            <Products />
-            <Products />
-            <Products />
           </List>
         </Section>
         <Section>
