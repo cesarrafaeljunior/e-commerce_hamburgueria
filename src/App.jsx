@@ -30,26 +30,45 @@ function App() {
 
   /*Cart */
   const [productsCart, setProductsCart] = useState([]);
-  console.log(productsCart);
+
+  /*Filter Search*/
+  const [valueInput, setValueInput] = useState("");
+
+  const filterProducts =
+    valueInput.length > 0
+      ? productsArray.filter((product) =>
+          product.name.toLowerCase().includes(valueInput)
+        )
+      : [];
+
   return (
     <>
       <Header>
         <Container>
           <Logo />
-          <Input />
+          <Input setValueInput={setValueInput} />
         </Container>
       </Header>
       <StyledMain>
         <Section>
           <List>
-            {productsArray.map((elem) => (
-              <Products
-                key={elem.id}
-                productsCart={productsCart}
-                setProductsCart={setProductsCart}
-                currentProduct={elem}
-              />
-            ))}
+            {filterProducts.length > 0
+              ? filterProducts.map((elem) => (
+                  <Products
+                    key={elem.id}
+                    productsCart={productsCart}
+                    setProductsCart={setProductsCart}
+                    currentProduct={elem}
+                  />
+                ))
+              : productsArray.map((elem) => (
+                  <Products
+                    key={elem.id}
+                    productsCart={productsCart}
+                    setProductsCart={setProductsCart}
+                    currentProduct={elem}
+                  />
+                ))}
           </List>
         </Section>
         <Section>
