@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const StyledCart = styled.div`
   width: 100%;
   max-width: 365px;
+  min-height: 223px;
   max-height: 400px;
 
   border: solid 1px var(--gray20);
   border-radius: 5px 5px 0 0;
 
-  margin-bottom: 50px;
   padding-bottom: 20px;
 
   .Cart__Header {

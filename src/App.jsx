@@ -9,6 +9,7 @@ import { Section } from "./components/Section/index.jsx";
 import { Cart } from "./components/Cart/index.jsx";
 import { useEffect, useState } from "react";
 import { getProducts } from "./services/getProducts.js";
+import { TotalValue } from "./components/Cart/CartTotal/index.jsx";
 
 function App() {
   /*Vitrine*/
@@ -53,6 +54,7 @@ function App() {
         </Section>
         <Section>
           <Cart productsCart={productsCart} setProductsCart={setProductsCart} />
+          <TotalValue />
         </Section>
       </StyledMain>
     </>

@@ -5,26 +5,23 @@ export const StyledMain = styled.main`
   flex-direction: column;
   align-items: center;
   gap: 50px;
-
   width: 90%;
   max-width: 1200px;
-
   margin: 0 auto;
   margin-top: 20px;
-
   section {
     width: 100%;
   }
-
   section ~ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     width: 100%;
-    max-height: 500px;
-    max-width: 365px;
-  }
 
+    max-width: 365px;
+    gap: 30px;
+  }
   @media (min-width: 960px) {
     width: 96%;
     flex-direction: row;
