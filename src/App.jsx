@@ -54,7 +54,9 @@ function App() {
         </Section>
         <Section>
           <Cart productsCart={productsCart} setProductsCart={setProductsCart} />
-          <TotalValue productsCart={productsCart} />
+          {productsCart.length > 0 && (
+            <TotalValue productsCart={productsCart} />
+          )}
         </Section>
       </StyledMain>
     </>

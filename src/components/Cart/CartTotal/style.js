@@ -6,7 +6,7 @@ export const StyledTotalValue = styled.section`
   gap: 22px;
 
   margin-top: -10px;
-  padding: 10px;
+  padding: 20px;
 
   background-color: var(--gray0);
   div {
