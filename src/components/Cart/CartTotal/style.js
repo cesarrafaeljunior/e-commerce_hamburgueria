@@ -5,10 +5,11 @@ export const StyledTotalValue = styled.section`
   flex-direction: column;
   gap: 22px;
 
-  margin-top: -10px;
+  margin-top: -30px;
   padding: 20px;
 
   background-color: var(--gray0);
+  border-top: 2px solid var(--gray50);
   div {
     display: flex;
     justify-content: space-between;
