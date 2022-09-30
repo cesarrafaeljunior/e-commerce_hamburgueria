@@ -32,7 +32,7 @@ export const Products = ({ productsCart, setProductsCart, currentProduct }) => {
       </figure>
       <h2>{currentProduct.name}</h2>
       <p>{currentProduct.category}</p>
-      <p>R$ {currentProduct.price}.00</p>
+      <p>{currentProduct.price.toFixed(2)}</p>
       <Button
         type="button"
         func={() => {
