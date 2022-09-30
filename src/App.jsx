@@ -7,8 +7,29 @@ import { StyledMain } from "./App.js";
 import { Products } from "./components/Product/index.jsx";
 import { Section } from "./components/Section/index.jsx";
 import { Cart } from "./components/Cart/index.jsx";
+import { useEffect, useState } from "react";
+import { getProducts } from "./services/getProducts.js";
 
 function App() {
+  /*Vitrine*/
+  const [productsArray, setProducts] = useState([]);
+
+  const sucessResponse = (data) => {
+    setProducts(data);
+  };
+
+  const errorResponse = (error) => {
+    console.log(error);
+  };
+
+  useEffect(() => {
+    getProducts(sucessResponse, errorResponse);
+  }, []);
+  /*-----------------------------------------------*/
+
+  /*Cart */
+  const [productsCart, setProductsCart] = useState([]);
+  console.log(productsCart);
   return (
     <>
       <Header>
@@ -20,16 +41,18 @@ function App() {
       <StyledMain>
         <Section>
           <List>
-            <Products />
-            <Products />
-            <Products />
-            <Products />
-            <Products />
-            <Products />
+            {productsArray.map((elem) => (
+              <Products
+                key={elem.id}
+                productsCart={productsCart}
+                setProductsCart={setProductsCart}
+                currentProduct={elem}
+              />
+            ))}
           </List>
         </Section>
         <Section>
-          <Cart />
+          <Cart productsCart={productsCart} setProductsCart={setProductsCart} />
         </Section>
       </StyledMain>
     </>

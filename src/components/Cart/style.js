@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const StyledCart = styled.div`
   width: 100%;
   max-width: 365px;
-  height: 100%;
   max-height: 400px;
 
   border: solid 1px var(--gray20);
@@ -37,7 +36,7 @@ export const StyledCart = styled.div`
     background-color: var(--white);
     margin: 20px 0 0 0;
     flex-wrap: wrap;
-    height: 300px;
+    max-height: 300px;
     overflow-y: auto;
   }
 `;
