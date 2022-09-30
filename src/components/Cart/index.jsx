@@ -1,5 +1,6 @@
 import { List } from "../List";
 import { ProductsCart } from "./CartProduct";
+import { EmptyCart } from "./EmptyCart";
 import { StyledCart } from "./style";
 
 export const Cart = ({ productsCart, setProductsCart }) => {
@@ -9,16 +10,20 @@ export const Cart = ({ productsCart, setProductsCart }) => {
         <h2>Carrinho de Compras</h2>
       </div>
       <List>
-        {productsCart.map((currentProduct) => {
-          return (
-            <ProductsCart
-              key={currentProduct.id}
-              productsCart={productsCart}
-              setProductsCart={setProductsCart}
-              currentProduct={currentProduct}
-            />
-          );
-        })}
+        {productsCart.length > 0 ? (
+          productsCart.map((currentProduct) => {
+            return (
+              <ProductsCart
+                key={currentProduct.id}
+                productsCart={productsCart}
+                setProductsCart={setProductsCart}
+                currentProduct={currentProduct}
+              />
+            );
+          })
+        ) : (
+          <EmptyCart />
+        )}
       </List>
     </StyledCart>
   );

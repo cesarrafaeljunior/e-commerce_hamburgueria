@@ -33,10 +33,16 @@ export const StyledCart = styled.div`
   }
 
   ul {
+    width: 100%;
+
     background-color: var(--white);
+
     margin: 20px 0 0 0;
+
     flex-wrap: wrap;
+
     max-height: 300px;
+
     overflow-y: auto;
   }
 `;
