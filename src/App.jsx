@@ -54,7 +54,7 @@ function App() {
         </Section>
         <Section>
           <Cart productsCart={productsCart} setProductsCart={setProductsCart} />
-          <TotalValue />
+          <TotalValue productsCart={productsCart} />
         </Section>
       </StyledMain>
     </>
