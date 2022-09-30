@@ -17,6 +17,7 @@ export const StyledMain = styled.main`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     width: 100%;
 
     max-width: 365px;
