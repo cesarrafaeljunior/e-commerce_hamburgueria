@@ -8,6 +8,7 @@ export const StyledProductsCart = styled.li`
   width: 100%;
 
   margin: 0 auto;
+  animation: cardAnimation 0.3s forwards;
   figure {
     display: flex;
     align-items: center;
@@ -53,6 +54,15 @@ export const StyledProductsCart = styled.li`
     &:hover {
       color: var(--colorSecundary);
       text-decoration: underline;
+    }
+  }
+
+  @keyframes cardAnimation {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
     }
   }
 `;

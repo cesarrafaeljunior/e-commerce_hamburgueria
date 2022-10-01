@@ -10,6 +10,7 @@ import { Cart } from "./components/Cart/index.jsx";
 import { useEffect, useState } from "react";
 import { getProducts } from "./services/getProducts.js";
 import { TotalValue } from "./components/Cart/CartTotal/index.jsx";
+import { SearchResults } from "./components/SearchResults/index.jsx";
 
 function App() {
   /*Vitrine*/
@@ -32,6 +33,7 @@ function App() {
   const [productsCart, setProductsCart] = useState([]);
 
   /*Filter Search*/
+  const [inputTextSearch, setInputTextSearch] = useState("");
   const [valueInput, setValueInput] = useState("");
 
   const filterProducts =
@@ -46,11 +48,22 @@ function App() {
       <Header>
         <Container>
           <Logo />
-          <Input setValueInput={setValueInput} />
+          <Input
+            setInputTextSearch={setInputTextSearch}
+            setValueInput={setValueInput}
+          />
         </Container>
       </Header>
       <StyledMain>
         <Section>
+          {inputTextSearch.length > 0 && (
+            <SearchResults
+              setInputTextSearch={setInputTextSearch}
+              inputTextSearch={inputTextSearch}
+              setValueInput={setValueInput}
+            />
+          )}
+
           <List>
             {filterProducts.length > 0
               ? filterProducts.map((elem) => (
@@ -74,7 +87,10 @@ function App() {
         <Section>
           <Cart productsCart={productsCart} setProductsCart={setProductsCart} />
           {productsCart.length > 0 && (
-            <TotalValue productsCart={productsCart} />
+            <TotalValue
+              setProductsCart={setProductsCart}
+              productsCart={productsCart}
+            />
           )}
         </Section>
       </StyledMain>
