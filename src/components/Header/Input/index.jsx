@@ -1,10 +1,11 @@
 import { ContainerInput, StyledInput } from "./style";
 import { Button } from "../../Button/index";
 import { useState } from "react";
-export const Input = ({ setValueInput }) => {
+export const Input = ({ setInputTextSearch, setValueInput }) => {
   const [input, setInput] = useState("");
 
   const getValue = () => {
+    setInputTextSearch(input);
     setValueInput(input.toLowerCase());
   };
 

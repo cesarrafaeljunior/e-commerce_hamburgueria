@@ -1,7 +1,11 @@
 import { Button } from "../../Button";
 import { StyledTotalValue } from "./style";
 
-export const TotalValue = ({ productsCart }) => {
+export const TotalValue = ({ setProductsCart, productsCart }) => {
+  const cleanSearch = () => {
+    setProductsCart([]);
+  };
+
   const total = productsCart.reduce((valAnt, acc) => {
     return valAnt + acc.price * acc.count;
   }, 0);
@@ -12,7 +16,7 @@ export const TotalValue = ({ productsCart }) => {
         <h2>Total</h2>
         <p>R$ {total.toFixed(2)}</p>
       </div>
-      <Button>Remover todos</Button>
+      <Button func={() => cleanSearch()}>Remover todos</Button>
     </StyledTotalValue>
   );
 };
