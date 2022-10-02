@@ -8,7 +8,9 @@ export const StyledProductsCart = styled.li`
   width: 100%;
 
   margin: 0 auto;
-  animation: cardAnimation 0.3s forwards;
+  animation: ${({ animationName }) =>
+      animationName == "entrada" ? "entrada" : "saida"}
+    0.4s;
   figure {
     display: flex;
     align-items: center;
@@ -56,13 +58,22 @@ export const StyledProductsCart = styled.li`
       text-decoration: underline;
     }
   }
-
-  @keyframes cardAnimation {
+  @keyframes entrada {
     0% {
+      opacity: 0;
       transform: translateX(-100%);
     }
     100% {
       transform: translateX(0);
+    }
+  }
+
+  @keyframes saida {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
     }
   }
 `;
