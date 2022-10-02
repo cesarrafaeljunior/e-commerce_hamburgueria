@@ -34,19 +34,21 @@ export const ProductsCart = ({
       <figure>
         <img src={currentProduct.img} alt={currentProduct.name} />
       </figure>
-      <div>
+      <div className="Box__Name">
         <h2>{currentProduct.name}</h2>
         <p>{currentProduct.category}</p>
       </div>
-      <p
-        className="btnRemover"
-        onClick={() => {
-          removeProductCart(currentProduct);
-        }}
-      >
-        Remover
-      </p>
-      <p>{currentProduct.count}</p>
+      <div className="Box__Qtd">
+        <p
+          className="btnRemover"
+          onClick={() => {
+            removeProductCart(currentProduct);
+          }}
+        >
+          Remover
+        </p>
+        <p>Qtd: {currentProduct.count}</p>
+      </div>
     </StyledProductsCart>
   );
 };
