@@ -24,11 +24,16 @@ export const StyledProductsCart = styled.li`
     height: 70px;
   }
 
-  div {
+  .Box__Name {
     width: 39%;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-between;
+    gap: 10px;
+    h2 {
+      font-size: var(--fontSize14);
+      color: var(--gray100);
+    }
     p {
       font-size: var(--fontSize12);
       font-weight: var(--fontWeiRegular);
@@ -36,10 +41,20 @@ export const StyledProductsCart = styled.li`
       margin-top: 5px;
     }
   }
-
-  h2 {
-    font-size: var(--fontSize14);
-    color: var(--gray100);
+  .Box__Qtd {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    p {
+      font-size: var(--fontSize12);
+      font-weight: var(--fontWeiBold);
+      color: var(--gray50);
+      margin-top: 5px;
+    }
+    p ~ p {
+      font-size: var(--fontSize14);
+      font-weight: var(--fontWeiBold);
+    }
   }
 
   .btnRemover {
